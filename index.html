@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GO2U</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="final logo.jpg">
+</head>
+<body>
+    <header>
+        <h1><img src="final logo.jpg"></h1>
+        <nav>
+            <a href="index.html">Начало</a>
+            <a href="gigs.html">Категории</a>
+            <a href="about.html">За нас</a>
+            <a href="become a seller.html">Публикувай услуга</a>
+            <a href="signin.html">Вход</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Намерете перфектните услуги за вашия бизнес</h2>
+        <p>Вашите задачи-нашата грижа</p>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Потърсете услуга или специалист" />
+      <button id="searchBtn">Търси</button>
+    </div>
+    </section>
+
+    <script>
+      document.getElementById('searchBtn').addEventListener('click', function() {
+        const query = document.getElementById('searchInput').value.trim();
+        if (query) {
+          window.location.href = 'gigs.html?search=' + encodeURIComponent(query);
+        }
+      });
+
+      document.getElementById('searchInput').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+          document.getElementById('searchBtn').click();
+        }
+      });
+    </script>
+
+    <section class="categories">
+    <div class="category" id="car1"><a href="gigs.html?category=%D0%94%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%B8%20%D0%B8%20%D0%92%D1%80%D0%B0%D1%82%D0%B8">Дограми и Врати</a></div>
+    <div class="category"><a href="gigs.html?category=%D0%A1%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B8%20%D0%B7%D0%B0%20%D1%81%D0%B8%D0%B3%D1%83%D1%80%D0%BD%D0%BE%D1%81%D1%82">Системи за сигурност</a></div>
+    <div class="category"><a href="gigs.html?category=%D0%9F%D0%BE%D0%BA%D1%80%D0%B8%D0%B2%D0%B8%20%D0%B8%20%D1%83%D0%BB%D1%83%D1%86%D0%B8">Покриви и улуци</a></div>
+    <div class="category"><a href="gigs.html?category=%D0%A0%D0%B5%D1%81%D1%82%D0%B0%D0%B2%D1%80%D0%B8%D1%80%D0%B0%D0%BD%D0%B5">Реставриране</a></div>
+    <div class="category"><a href="gigs.html?category=%D0%93%D1%80%D0%B0%D0%B4%D0%B8%D0%BD%D0%B8%D1%80%D0%B0%D0%BD%D0%B5%20%D0%B8%20%D0%BE%D0%B7%D0%B5%D0%BB%D0%B5%D0%BD%D1%8F%D0%B2%D0%B0%D0%BD%D0%B5">Градиниране и озеленяване</a></div>
+  </section>
+
+
+    <section class="categories">
+        <h2>Популярни услуги:</h2>
+    <div class="category"><a href="gigs.html?category=%D0%91%D0%B5%D1%82%D0%BE%D0%BD%D0%B0%D0%B4%D0%B6%D0%B8%D0%B8">Бетонаджии</a></div>
+    <div class="category"><a href="gigs.html?category=%D0%91%D0%B0%D0%BD%D0%B8%20%D0%B8%20%D0%92%D0%98%D0%9A">Бани и ВИК</a></div>
+    <div class="category"><a href="gigs.html?category=%D0%A2%D0%B0%D0%BF%D0%B5%D1%82%D0%B0%D0%B4%D0%B6%D0%B8%D0%B8">Тапетаджии</a></div>
+    <div class="category"><a href="gigs.html?category=%D0%A8%D0%BF%D0%B0%D0%BA%D0%BB%D0%BE%D0%B2%D1%87%D0%B8%D1%86%D0%B8">Шпакловчици</a></div>
+  </section>    
+
+    <footer>
+    <p>© 2025 GO2U. Всички права запазени.</p>
+  </footer>
+
+  <script src="auth.js"></script>
+</body>
+</html>

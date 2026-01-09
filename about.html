@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>За нас - GO2U</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #e8f5e9 0%, #e1f5fe 100%);
+    color: #333;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #0d47a1 0%, #00897b 100%);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.header-left h1 a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1rem;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #e0f2f1;
+}
+
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.about-section {
+    margin-bottom: 2rem;
+}
+
+.about-section h2 {
+    color: #0d47a1;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.about-section p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.team {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.team-member {
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+}
+
+.team-member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.team-member h3 {
+    color: #0d47a1;
+    margin-bottom: 0.5rem;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #f0f0f0;
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        margin-top: 1rem;
+    }
+
+    nav a {
+        margin: 0 0.5rem;
+    }
+
+    .team {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <h1><a href="index.html">GO2U</a></h1>
+        </div>
+        <nav>
+            <a href="index.html">Начало</a>
+            <a href="gigs.html">Категории</a>
+            <a href="become a seller.html">Публикувай услуга</a>
+            <a href="signin.html">Вход</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="about-section">
+            <h2>За създаването на GO2U</h2>
+            <p>Подобно на Вас и ние често сме се сблъсквали с многобройни проблеми и трудности, когато сме търсили майстор за ремонтна дейност в дома. След седмици преглеждане на обяви, търсене и проучване, загубено време и пари, все пак се е случвало да намерим точния, отговарящ на изискванията на проекта ни, изпълнител</p>
+        </section>
+
+        <section class="about-section">
+            <h2>Нашата мисия</h2>
+            <p>Да свързваме таланти с възможности. Вярваме, че всеки има умения, които могат да бъдат полезни на другите. GO2U предоставя платформата, където това се случва лесно и ефективно.</p>
+        </section>
+
+        <section class="about-section">
+            <h2>Нашето мото</h2>
+            <p style="font-size: larger; font-style: italic; text-align: center;">Вашите задачи-нашата грижа</p>
+        </section>
+
+        <section class="about-section">
+            <h2>Екипът ни</h2>
+            <div class="team">
+                <div class="team-member">
+                    <h3>Теодора Иванова-Василева</h3>
+                    <p>Ръководител</p>
+                </div>
+                <div class="team-member">
+                    <h3>Мирослав</h3>
+                    <p>Управител</p>
+                </div>
+                <div class="team-member">
+                    <h3>Радослав Иванов</h3>
+                    <p>Заместник управител</p>
+                </div>
+                <div class="team-member">
+                    <h3>Мартин</h3>
+                    <p>Заместник управител</p>
+                </div>
+                <div class="team-member">
+                    <h3>Калоян</h3>
+                    <p>Специалист маркетинг</p>
+                </div>
+                <div class="team-member">
+                    <h3>Милен</h3>
+                    <p>Руководител отдел маркетинг</p>
+                </div>
+                <div class="team-member">
+                    <h3>Савина</h3>
+                    <p>Мениджър реклама</p>
+                </div>
+                <div class="team-member">
+                    <h3>Теодор Радионов</h3>
+                    <p>Мениджър продажби</p>
+                </div>
+                <div class="team-member">
+                    <h3>Моника</h3>
+                    <p>Счетоводител</p>
+                </div>
+                <div class="team-member">
+                    <h3>Никол</h3>
+                    <p>Касиер</p>
+                </div>
+                <div class="team-member">
+                    <h3>Теодор Георгиев</h3>
+                    <p>Специалист интернет поддръжка</p>
+                </div>
+                <div class="team-member">
+                    <h3>Радослав Петков </h3>
+                    <p>Специалист интернет поддръжка</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <h2>Контакти</h2>
+            <p>Ако имате въпроси или предложения, свържете се с нас на:</p>
+            <p>Поща:<a href="go2u@abv.bg">go2u@abv.bg</a></p>
+            <p>Instagram: go2u2025</p>
+            <p>Facebook: go2U.bg</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 GO2U. Всички права запазени.</p>
+    </footer>
+
+    <script src="auth.js"></script>
+</body>
+</html>

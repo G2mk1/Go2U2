@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход - GO2U</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #0d47a1 0%, #00897b 100%);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      main {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+      }
+
+      .login-box {
+        background: white;
+        border-radius: 12px;
+        padding: 2.5rem;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        width: 100%;
+        max-width: 400px;
+      }
+
+      .login-box h2 {
+        font-size: 1.8rem;
+        color: #1a1a1a;
+        margin-bottom: 0.5rem;
+        text-align: center;
+      }
+
+      .login-box .subtitle {
+        text-align: center;
+        color: #666;
+        margin-bottom: 1.5rem;
+        font-size: 0.95rem;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+        display: flex;
+        flex-direction: column;
+      }
+
+      label {
+        color: #1a1a1a;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        font-size: 0.95rem;
+      }
+
+      input[type="text"],
+      input[type="password"] {
+        padding: 12px 15px;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        transition: all 0.3s ease;
+      }
+
+      input[type="text"]:focus,
+      input[type="password"]:focus {
+        outline: none;
+        border-color: #0d47a1;
+        box-shadow: 0 0 0 3px rgba(13, 71, 161, 0.1);
+      }
+
+      .login-btn {
+        width: 100%;
+        padding: 12px;
+        background: linear-gradient(135deg, #0d47a1 0%, #00897b 100%);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-weight: 700;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 1rem;
+      }
+
+      .login-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(13, 71, 161, 0.4);
+      }
+
+      .register-link {
+        text-align: center;
+        margin-top: 1.5rem;
+        font-size: 0.95rem;
+        color: #666;
+      }
+
+      .register-link a {
+        color: #0d47a1;
+        text-decoration: none;
+        font-weight: 700;
+      }
+
+      .register-link a:hover {
+        text-decoration: underline;
+      }
+
+      .demo-info {
+        background: linear-gradient(135deg, #e8f5e9 0%, #e0f2f1 100%);
+        border-left: 4px solid #0d47a1;
+        padding: 1rem;
+        border-radius: 8px;
+        margin-bottom: 1.5rem;
+        font-size: 0.85rem;
+        color: #333;
+      }
+
+      .demo-info strong {
+        color: #0d47a1;
+      }
+
+      .alert {
+        padding: 1rem;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        display: none;
+        font-weight: 600;
+      }
+
+      .alert.success {
+        background: #c8e6c9;
+        color: #1b5e20;
+        border: 1px solid #a5d6a7;
+        display: block;
+      }
+
+      .alert.error {
+        background: #ffcdd2;
+        color: #b71c1c;
+        border: 1px solid #ef9a9a;
+        display: block;
+      }
+
+      @media (max-width: 600px) {
+        .login-box {
+          padding: 1.5rem;
+        }
+
+        .login-box h2 {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><a href="index.html" style="color: white; text-decoration: none;">GO2U</a></h1>
+        <nav>
+            <a href="index.html">Начало</a>
+            <a href="gigs.html">Категории</a>
+            <a href="become a seller.html">Публикувай услуга</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="login-box">
+            <h2>Вход в профила</h2>
+            <p class="subtitle">Влезте със своя профил</p>
+
+            <div id="alertBox" class="alert"></div>
+
+            <div class="demo-info">
+                <strong>Демо достъп:</strong><br>
+                Потребител: <strong>demo</strong><br>
+                Парола: <strong>demo123</strong><br><br>
+                <strong>Продавач:</strong><br>
+                Потребител: <strong>seller</strong><br>
+                Парола: <strong>seller123</strong>
+            </div>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Потребителско име:</label>
+                    <input type="text" id="username" name="username" placeholder="Вашето потребителско име" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Парола:</label>
+                    <input type="password" id="password" name="password" placeholder="Вашата парола" required>
+                </div>
+
+                <button type="submit" class="login-btn">Вход</button>
+            </form>
+
+            <div class="register-link">
+                Нямате профил? <a href="become a seller.html">Регистрирайте се</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 GO2U. Всички права запазени.</p>
+    </footer>
+
+    <script src="auth.js"></script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const alertBox = document.getElementById('alertBox');
+
+            const result = auth.login(username, password);
+            
+            if (result.success) {
+                alertBox.className = 'alert success';
+                alertBox.textContent = result.message;
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 1500);
+            } else {
+                alertBox.className = 'alert error';
+                alertBox.textContent = result.message;
+            }
+        });
+
+        if (auth.isLoggedIn()) {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

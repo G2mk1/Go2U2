@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация - GO2U</title>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #e8f5e9 0%, #e1f5fe 100%);
+    color: #333;
+    min-height: 100vh;
+}
+
+header {
+    background: linear-gradient(135deg, #0d47a1 0%, #00897b 100%);
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+    color: white;
+    font-size: 1.8rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    color: rgb(122, 156, 255);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.back-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(-4px);
+}
+
+.container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+.help-section {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.help-section h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.help-section p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.form-container {
+    background: white;
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 2rem;
+}
+
+.form-container h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+}
+
+.form-group .help-text {
+    font-size: 0.85rem;
+    color: #999;
+    margin-top: 0.25rem;
+    font-weight: 400;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="number"],
+.form-group input[type="date"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.3s ease;
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #0d47a1;
+    box-shadow: 0 0 0 3px rgba(13, 71, 161, 0.1);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.form-row.full {
+    grid-template-columns: 1fr;
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.file-upload {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.file-upload input[type="file"] {
+    display: none;
+}
+
+.file-upload-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #0d47a1 0%, #00897b 100%);
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.file-upload-label:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(13, 71, 161, 0.4);
+}
+
+.file-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+}
+
+.file-item {
+    background: #f0f0f0;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.file-item button {
+    background: none;
+    border: none;
+    color: #e74c3c;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 0;
+    margin-left: 0.5rem;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #0d47a1;
+}
+
+.checkbox-group label {
+    margin: 0;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+.checkbox-group a {
+    color: #0d47a1;
+    text-decoration: none;
+}
+
+.checkbox-group a:hover {
+    text-decoration: underline;
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2.5rem;
+}
+
+.btn {
+    padding: 12px 35px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #0d47a1 0%, #00897b 100%);
+    color: white;
+    min-width: 200px;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(13, 71, 161, 0.4);
+}
+
+.btn-secondary {
+    background: #f0f0f0;
+    color: #333;
+    min-width: 200px;
+}
+
+.btn-secondary:hover {
+    background: #e0e0e0;
+    transform: translateY(-2px);
+}
+
+.info-banner {
+    background: linear-gradient(135deg, #e3f2fd 0%, #e0f2f1 100%);
+    border-left: 4px solid #0d47a1;
+    padding: 1.25rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.info-banner h3 {
+    color: #0d47a1;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.info-banner p {
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+}
+
+footer {
+    background: linear-gradient(135deg, #0d47a1 0%, #00897b 100%);
+    color: white;
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    margin-top: 3rem;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .form-container {
+        padding: 1.5rem;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📝 Регистрирайте се като услугодател</h1>
+    </header>
+
+    <div class="container">
+        <a href="index.html" class="back-link">← Начало</a>
+
+        <div class="help-section">
+            <h2>Публикувай услуга</h2>
+            <p>Присъединете се към GO2U и начните да предлагате своите услуги. Попълнете формата по-долу с детали за вас и вашия профил на услугодател.</p>
+            <p><strong>💡 Съвет:</strong> По-подробна информация означава повече интересни клиенти и повече възможности за работа.</p>
+        </div>
+
+        <div class="form-container">
+            <h2>Регистрирайте се като услугодател</h2>
+
+            <div id="alertBox" class="alert"></div>
+
+            <div class="info-banner">
+                <h3>ℹ️ Задължителни полета</h3>
+                <p>Всички полета със звездичка (*) са задължителни.</p>
+            </div>
+
+            <form id="listingForm">
+                <!-- Username -->
+                <div class="form-group">
+                    <label for="username">Потребителско име * <span class="help-text">Вашето уникално потребителско име</span></label>
+                    <input type="text" id="username" name="username" placeholder="Вашето потребителско име" required>
+                </div>
+
+                <!-- Full Name -->
+                <div class="form-group">
+                    <label for="fullName">Пълно име * <span class="help-text">Вашето пълно име</span></label>
+                    <input type="text" id="fullName" name="fullName" placeholder="Иван Петров" required>
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email">Имейл адрес * <span class="help-text">Вашата имейл адреса</span></label>
+                    <input type="email" id="email" name="email" placeholder="вашият@имейл.com" required>
+                </div>
+
+                <!-- Phone -->
+                <div class="form-group">
+                    <label for="phone">Телефонен номер * <span class="help-text">Как да ви контактуваме</span></label>
+                    <input type="tel" id="phone" name="phone" placeholder="087 123 4567" required>
+                </div>
+
+                <!-- Password -->
+                <div class="form-group">
+                    <label for="password";>Парола * <span class="help-text">Поне 6 символа</span></label>
+                    <input type="password" id="password" name="password" placeholder="Вашата парола" minlength="6" required style="height: 30px;">
+                </div>
+
+                <!-- Account Type -->
+                <div class="form-group">
+                    <label for="accountType">Тип профил * <span class="help-text">Какъв вид профил искате?</span></label>
+                    <select id="accountType" name="accountType" required>
+                        <option value="client">Клиент (Търся услуги)</option>
+                        <option value="seller">Услугодател (Предлагам услуги)</option>
+                    </select>
+                </div>
+
+                <!-- Seller specific fields -->
+                <div id="sellerFields" style="display: none;">
+                    <div class="form-group">
+                        <label for="serviceCategory">Категория услуга</label>
+                        <select id="serviceCategory" name="serviceCategory">
+                            <option value="">Изберете категория</option>
+                            <option value="web-development">Уеб разработка</option>
+                            <option value="web-design">Уеб дизайн</option>
+                            <option value="graphic-design">Графичен дизайн</option>
+                            <option value="writing">Писане и редакция</option>
+                            <option value="seo">SEO и маркетинг</option>
+                            <option value="mobile-development">Мобилна разработка</option>
+                            <option value="video-production">Видео продукция</option>
+                            <option value="other">Други услуги</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bio">Биография</label>
+                        <textarea id="bio" name="bio" placeholder="Расскажите о себе и ваших услугах..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Terms Agreement -->
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">Приемам <a href="#">Условията на използване</a> и <a href="#">Политиката за поверителност</a> *</label>
+                </div>
+
+                <!-- Submit Buttons -->
+                <div class="button-group">
+                    <button type="reset" class="btn btn-secondary">Изчистване</button>
+                    <button type="submit" class="btn btn-primary">Регистрация →</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 GO2U. All rights reserved.</p>
+    </footer>
+
+    <script src="auth.js"></script>
+    <script>
+        // Check if already logged in
+        if (auth.isLoggedIn()) {
+            document.body.innerHTML = '<div style="text-align:center; padding: 3rem;"><h2>Вече сте влезли</h2><p>Редиректиране...</p></div>';
+            setTimeout(() => window.location.href = 'index.html', 2000);
+        }
+
+        const accountTypeSelect = document.getElementById('accountType');
+        const sellerFields = document.getElementById('sellerFields');
+
+        // Show/hide seller fields based on account type
+        accountTypeSelect.addEventListener('change', function() {
+            sellerFields.style.display = this.value === 'seller' ? 'block' : 'none';
+        });
+
+        document.getElementById('listingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const fullName = document.getElementById('fullName').value;
+            const phone = document.getElementById('phone').value;
+            const accountType = document.getElementById('accountType').value;
+            const termsAccepted = document.getElementById('terms').checked;
+
+            const alertBox = document.getElementById('alertBox');
+
+            if (!termsAccepted) {
+                alertBox.className = 'alert error';
+                alertBox.textContent = 'Трябва да приемете условията на използване';
+                return;
+            }
+
+            if (password.length < 6) {
+                alertBox.className = 'alert error';
+                alertBox.textContent = 'Паролата трябва да е поне 6 символа';
+                return;
+            }
+
+            const result = auth.register(username, email, password, fullName, phone, accountType);
+
+            if (result.success) {
+                alertBox.className = 'alert success';
+                alertBox.textContent = result.message + '. Редиректиране към вход...';
+                setTimeout(() => {
+                    window.location.href = 'signin.html';
+                }, 2000);
+            } else {
+                alertBox.className = 'alert error';
+                alertBox.textContent = result.message;
+            }
+        });
+    </script>
+
+</body>
+</html>
